@@ -21,7 +21,7 @@ public:
 	//delete a node
 	bool deleteFromStart();
 	bool deleteFromEnd();
-	bool deleteAtIndex();
+	bool deleteAtIndex(int index);
 	//print
 	bool printList();
 };

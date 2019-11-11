@@ -85,9 +85,30 @@ bool cLinkList::deleteFromStart()
 		return 1;
 	}
 }
-bool deleteFromEnd()
+bool cLinkList::deleteFromEnd()
 {
-	return 0;
+	if (this->head == NULL)
+	{
+		cout << "nothing to dell" << endl;
+	}
+	else if (this->head->next == NULL)
+	{
+		this->head = NULL;
+		return 0;
+	}
+	else
+	{
+		cNode*ptr = head;
+		cNode*ptrnext = head->next;
+		while (ptrnext->next!=NULL)
+		{
+			ptr = ptr->next;
+			ptrnext = ptrnext->next;
+		}
+		ptr->next = NULL;
+		ptrnext = NULL;
+		return 1;
+	}
 }
 bool deleteAtIndex()
 {
@@ -95,11 +116,19 @@ bool deleteAtIndex()
 }
 bool cLinkList::printList()
 {
-	cNode *ptr = head;
-	while (ptr!=NULL)
+	if (this->head != NULL)
 	{
-		cout << ptr->key << endl;
-		ptr = ptr->next;
+		cNode *ptr = head;
+		while (ptr != NULL)
+		{
+			cout << ptr->key << endl;
+			ptr = ptr->next;
+		}
+		return 1;
 	}
-	return 0;
+	else
+	{
+		cout << "list is empty" << endl;
+		return 0;
+	}
 }

@@ -1,3 +1,4 @@
 ﻿  implimentation.cpp
+e:\git hub\dsa\linklist\linklist\implimentation.cpp(112): warning C4715: 'cLinkList::deleteFromEnd': not all control paths return a value
   LinkList.vcxproj -> E:\git hub\DSA\LinkList\Debug\LinkList.exe
   LinkList.vcxproj -> E:\git hub\DSA\LinkList\Debug\LinkList.pdb (Partial PDB)

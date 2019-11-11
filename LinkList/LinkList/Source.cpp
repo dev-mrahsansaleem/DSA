@@ -16,6 +16,9 @@ int main()
 	l1.updateValueAt(0, 0);
 	l1.updateValueAt(-1, -1);
 	l1.printList();
+	cout << "dell";
+	l1.deleteFromEnd();
+	l1.printList();
 	system("pause");
 	return 0;
 }
