@@ -110,18 +110,70 @@ bool cLinkList::deleteFromEnd()
 		return 1;
 	}
 }
-bool deleteAtIndex()
+bool cLinkList::deleteAtIndex(int index)
 {
+	if (this->head == NULL || index<1)
+	{
+		cout << "invalid" << endl;
+	}
+	else if (index==1)//count=1
+	{
+		this->head = this->head->next;
+		return 0;
+	}
+	else
+	{
+		int count = 1;
+		cNode*ptr = head;
+		cNode*ptrnext = head->next;
+		while (ptrnext->next != NULL && count<index-1)
+		{
+			ptr = ptr->next;
+			ptrnext = ptrnext->next;
+			count++;
+		}
+		if (count == index - 1)
+		{
+			ptr->next = ptrnext->next;
+			ptrnext = NULL;
+		}
+		else
+		{
+			cout << index << "exceed the length of list" << endl;
+		}
+		return 1;
+	}
 	return 0;
+}
+int cLinkList::lenList()
+{
+	int count = -1;
+	if (this->head != NULL)
+	{
+		count = 1;
+		cNode *ptr = head;
+		while (ptr->next != NULL)
+		{
+			count++;
+			ptr = ptr->next;
+		}
+		return count;
+	}
+	else
+	{
+		cout << "list is empty" << endl;
+		return count;
+	}
 }
 bool cLinkList::printList()
 {
 	if (this->head != NULL)
 	{
+		int count = 1;
 		cNode *ptr = head;
 		while (ptr != NULL)
 		{
-			cout << ptr->key << endl;
+			cout << count++ << " =>" << ptr->key << endl;
 			ptr = ptr->next;
 		}
 		return 1;
