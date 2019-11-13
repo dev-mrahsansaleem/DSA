@@ -9,6 +9,13 @@ int main()
 	l1.insertAtTail(2);
 	l1.insertAtTail(1);
 	l1.insertAtTail(0);
+
+	l1.printList();
+	l1.deleteFromStart();
+	l1.deleteFromStart();
+	l1.deleteFromStart();
+	l1.deleteFromStart();
+	l1.deleteFromStart();
 	l1.printList();
 	system("pause");
 	return 0;

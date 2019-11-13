@@ -46,7 +46,6 @@ bool cDublyLinkList::insertAtTail(int value)
 		}
 		ptr->next = n;
 		n->prev = ptr;
-		ptr = NULL;
 	}
 	return 1;
 }
@@ -59,13 +58,38 @@ bool cDublyLinkList::insertAtIndex(int index, int value)//ask about logic
 bool cDublyLinkList::updateAt(int index, int value)
 {
 
-	return 1;
+	int count = 1;
+	cNode *ptr = head;
+	while (ptr != NULL&&count <= index)
+	{
+		if (count == index)
+		{
+			ptr->value = value;
+			return 1;
+		}
+		count++;
+		ptr = ptr->next;
+	}
+	cout << "invalid index" << index << endl;
+	return 0;
 }
 //del
-bool cDublyLinkList::deleteFromStart()
+bool cDublyLinkList::deleteFromStart()//problem in handling prev pointer
 {
 
-	return 1;
+	if (this->head == NULL)
+	{
+		cout << "nothing to delete" << endl;
+		return 0;
+	}
+	else
+	{
+		cNode*ptr = head;
+		head = head->next;
+		ptr->next = NULL;
+		ptr->prev = NULL;
+		return 1;
+	}
 }
 bool cDublyLinkList::deleteFromEnd()
 {
