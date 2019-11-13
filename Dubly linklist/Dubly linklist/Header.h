@@ -4,11 +4,14 @@ public:
 	cNode *prev;
 	int value;
 	cNode *next;
+	cNode();
 };
 class cDublyLinkList
 {
 public:
 	cNode *head;
+	//constructor
+	cDublyLinkList();
 	//insert
 	bool insertAtHead(int value);
 	bool insertAtTail(int value);
