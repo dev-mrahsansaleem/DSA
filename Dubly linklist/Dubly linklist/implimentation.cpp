@@ -93,8 +93,23 @@ bool cDublyLinkList::deleteFromStart()//problem in handling prev pointer
 }
 bool cDublyLinkList::deleteFromEnd()
 {
-
-	return 1;
+	if (this->head == NULL)
+	{
+		cout << "nothing to delete" << endl;
+		return 0;
+	}
+	else
+	{
+		cNode*ptr = head;
+		while (ptr->next!=NULL)
+		{
+			ptr = ptr->next;
+		}
+		head = head->next;
+		ptr->next = NULL;
+		ptr->prev = NULL;
+		return 1;
+	}
 }
 bool cDublyLinkList::deleteAt(int index)
 {
