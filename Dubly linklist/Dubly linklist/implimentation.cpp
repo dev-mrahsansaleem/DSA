@@ -114,7 +114,25 @@ bool cDublyLinkList::deleteFromEnd()
 bool cDublyLinkList::deleteAt(int index)
 {
 
-	return 1;
+	if (head == NULL)
+	{
+		cout << "list is empty" << endl;
+		return 0;
+	}
+	else
+	{
+		cNode *ptr = head;
+		int counter = 1;
+		while (ptr != NULL)
+		{
+			cout << counter << "=> " << ptr->value << endl;
+			counter++;
+			ptr = ptr->next;
+		}
+		ptr = NULL;
+		return counter;
+		return 1;
+	}
 }
 //length
 int cDublyLinkList::listLength()
