@@ -123,11 +123,22 @@ bool cDublyLinkList::deleteAt(int index)
 	{
 		cNode *ptr = head;
 		int counter = 1;
-		while (ptr != NULL)
+		while (ptr != NULL && counter<index)
 		{
-			cout << counter << "=> " << ptr->value << endl;
 			counter++;
 			ptr = ptr->next;
+		}
+		if (counter == index)
+		{
+
+		}
+		else if (counter < index)
+		{
+
+		}
+		else
+		{
+
 		}
 		ptr = NULL;
 		return counter;
